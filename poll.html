@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .poll-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        .option {
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            background-color: #007bff;
+            color: white;
+        }
+        .option:hover {
+            background-color: #0056b3;
+        }
+        .results {
+            display: none;
+            margin-top: 20px;
+        }
+        .bar-container {
+            width: 100%;
+            background-color: #ddd;
+            border-radius: 5px;
+            margin-top: 5px;
+        }
+        .bar {
+            height: 20px;
+            background-color: #007bff;
+            border-radius: 5px;
+            text-align: right;
+            padding-right: 5px;
+            color: white;
+            font-size: 12px;
+            width: 0%;
+            transition: width 0.5s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="poll-container">
+        <h3>Which programming language do you prefer?</h3>
+        <div class="option" onclick="vote('Python')">Python</div>
+        <div class="option" onclick="vote('JavaScript')">JavaScript</div>
+        <div class="option" onclick="vote('Java')">Java</div>
+        <div class="option" onclick="vote('C++')">C++</div>
+        
+        <div class="results" id="results">
+            <h4>Poll Results</h4>
+            <div>Python:
+                <div class="bar-container"><div class="bar" id="python-bar">0%</div></div>
+            </div>
+            <div>JavaScript:
+                <div class="bar-container"><div class="bar" id="js-bar">0%</div></div>
+            </div>
+            <div>Java:
+                <div class="bar-container"><div class="bar" id="java-bar">0%</div></div>
+            </div>
+            <div>C++:
+                <div class="bar-container"><div class="bar" id="cpp-bar">0%</div></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        let pollData = { Python: 40, JavaScript: 30, Java: 20, Cpp: 10 };
+        
+        function vote(choice) {
+            pollData[choice] += 1;
+            showResults();
+        }
+        
+        function showResults() {
+            let totalVotes = Object.values(pollData).reduce((a, b) => a + b, 0);
+            document.getElementById('results').style.display = 'block';
+            updateBar('python-bar', pollData.Python, totalVotes);
+            updateBar('js-bar', pollData.JavaScript, totalVotes);
+            updateBar('java-bar', pollData.Java, totalVotes);
+            updateBar('cpp-bar', pollData.Cpp, totalVotes);
+        }
+        
+        function updateBar(id, votes, totalVotes) {
+            let percentage = Math.round((votes / totalVotes) * 100);
+            let bar = document.getElementById(id);
+            bar.style.width = percentage + '%';
+            bar.innerText = percentage + '%';
+        }
+    </script>
+</body>
+</html>

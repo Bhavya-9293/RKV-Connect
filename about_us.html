@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Fantastic Four</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Lobster&family=Poppins:wght@400;700&family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #e6f2ff;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #0073e6;
+            color: #fff;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-family: 'Bangers', cursive;
+        }
+        .header p {
+            font-size: 1.2em;
+            font-family: 'Lobster', cursive;
+        }
+        .profiles {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 50px;
+        }
+        .profile {
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            margin: 20px;
+            padding: 20px;
+            flex: 0 1 calc(25% - 40px);
+            box-sizing: border-box;
+            text-align: center;
+            border: 2px solid #0073e6;
+        }
+        .profile img {
+            border-radius: 50%;
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 5px solid #0073e6;
+        }
+        .profile h2 {
+            margin: 0 0 10px;
+            font-size: 1.5em;
+            color: #0073e6;
+            font-family: 'Raleway', sans-serif;
+        }
+        .profile p {
+            font-size: 1em;
+            color: #666;
+            font-family: 'Poppins', sans-serif;
+        }
+        @media (max-width: 768px) {
+            .profile {
+                flex: 0 1 calc(50% - 40px);
+            }
+        }
+        @media (max-width: 480px) {
+            .profile {
+                flex: 0 1 calc(100% - 40px);
+            }
+        }
+        .circle {
+          height: 24px;
+          width: 24px;
+          border-radius: 24px;
+          background-color: black;
+          position: fixed; 
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          z-index: 99999999; /* so that it stays on top of all other elements */
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <marquee><h1 style="letter-spacing: 2px;">Trouble Makers</h1></marquee>
+        <p>Meet the team that makes the magic happen</p>
+    </div>
+    <div class="container">
+        <div class="profiles">
+            <div class="profile">
+                <img src="io.jpg" alt="Profile Picture 1">
+                <h2>SMd Ishrath</h2>
+                <p>UI/UX Developer</p>
+                <p>SMd Ishrath is the brains behind our operations, ensuring everything runs smoothly.</p>
+            </div>
+            <div class="profile">
+                <img src="tharun.jpeg" alt="Profile Picture 2">
+                <h2>V Tharun Kumar</h2>
+                <p>Full Stack Developer</p>
+                <p>V Tharun Kumar brings our ideas to life with exceptional frontend and backend implementation of the design.</p>
+            </div>
+            <div class="profile">
+                <img src="gree.jpg" alt="Profile Picture 3">
+                <h2>P Greeshma</h2>
+                <p>Backend Developer</p>
+                <p>P Greeshma ensures our systems are secure and scalable.</p>
+            </div>
+            <div class="profile">
+                <img src="bha.jpeg" alt="Profile Picture 4">
+                <h2>K Bhavya Chandana</h2>
+                <p>Frontend Developer</p>
+                <p>K Bhavya Chandana creates seamless user experiences with frontend expertise.</p>
+            </div>
+        </div>
+    </div>
+      <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+  <div class="circle"></div>
+    <script>
+        const coords = { x: 0, y: 0 };
+            const circles = document.querySelectorAll(".circle");
+            
+            const colors = [
+              "#ffb56b",
+              "#ff6669",
+              "#f89d63",
+              "#f59761",
+              "#ef865e",
+              "#ec805d",
+              "#e36e5c",
+              "#df685c",
+              "#d5585c",
+              "#d1525c",
+              "#c5415d",
+              "#c03b5d",
+              "#b22c5e",
+              "#ac265e",
+              "#9c155f",
+              "#950f5f",
+              "#830060",
+              "#7c0060",
+              "#680060",
+              "#60005f",
+              "#48005f",
+              "#3d005e"
+            ];
+            
+            circles.forEach(function (circle, index) {
+              circle.x = 0;
+              circle.y = 0;
+              circle.style.backgroundColor = colors[index % colors.length];
+            });
+            
+            window.addEventListener("mousemove", function(e){
+              coords.x = e.clientX;
+              coords.y = e.clientY;
+              
+            });
+            
+            function animateCircles() {
+              
+              let x = coords.x;
+              let y = coords.y;
+              
+              circles.forEach(function (circle, index) {
+                circle.style.left = x - 12 + "px";
+                circle.style.top = y - 12 + "px";
+                
+                circle.style.scale = (circles.length - index) / circles.length;
+                
+                circle.x = x;
+                circle.y = y;
+            
+                const nextCircle = circles[index + 1] || circles[0];
+                x += (nextCircle.x - x) * 0.3;
+                y += (nextCircle.y - y) * 0.3;
+              });
+             
+              requestAnimationFrame(animateCircles);
+            }
+            
+            animateCircles();
+    </script>
+</body>
+</html>
+

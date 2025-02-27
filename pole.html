@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll Slideshow</title>
+    <link rel="stylesheet" href="pole.css">
+</head>
+<body>
+    <div class="slideshow-container">
+        <!-- Question 1 -->
+        <div class="mySlides fade">
+            <div class="card">
+                <h2>Question 1</h2>
+                <p>Which programming language is best for Data Science?</p>
+                <div class="options">
+                    <!-- Hidden default option to ensure no selection -->
+                    <input type="radio" name="q1" style="display: none;" checked>
+                    <label>
+                        <input type="radio" name="q1" value="Python"> Python
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="C"> C
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="Java"> Java
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="R"> R
+                    </label>
+                </div>
+                <div class="results" id="results-q1"></div>
+            </div>
+        </div>
+
+        <!-- Question 2 -->
+        <div class="mySlides fade">
+            <div class="card">
+                <h2>Question 2</h2>
+                <p>Which tool is most commonly used for Data Visualization?</p>
+                <div class="options">
+                    <!-- Hidden default option to ensure no selection -->
+                    <input type="radio" name="q2" style="display: none;" checked>
+                    <label>
+                        <input type="radio" name="q2" value="Tableau"> Tableau
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="Power BI"> Power BI
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="Matplotlib"> Matplotlib
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="Excel"> Excel
+                    </label>
+                </div>
+                <div class="results" id="results-q2"></div>
+            </div>
+        </div>
+
+        <!-- Question 3 -->
+        <div class="mySlides fade">
+            <div class="card">
+                <h2>Question 3</h2>
+                <p>Which database is most suitable for large-scale data?</p>
+                <div class="options">
+                    <!-- Hidden default option to ensure no selection -->
+                    <input type="radio" name="q3" style="display: none;" checked>
+                    <label>
+                        <input type="radio" name="q3" value="MySQL"> MySQL
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="MongoDB"> MongoDB
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="PostgreSQL"> PostgreSQL
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="Cassandra"> Cassandra
+                    </label>
+                </div>
+                <div class="results" id="results-q3"></div>
+            </div>
+        </div>
+
+        <!-- Navigation Buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+
+    <script src="pole.js"></script>
+</body>
+</html>

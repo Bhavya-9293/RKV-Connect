@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stylized Full Calendar Example</title>
+<!-- CSS for FullCalendar -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
+<!-- CSS for custom styles -->
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    margin: 20px;
+    background: linear-gradient(111.5deg, rgb(228, 247, 255) 21.9%, rgb(255, 216, 194) 92.2%)
+  }
+  .fc-title{
+    color:blue;
+    font-weight:bolder;
+  }
+  .fc-today-button {
+    color:white;
+  }
+  h2,button{
+    padding:10px;
+  }
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2c3e50;
+  }
+
+  #calendar {
+    max-width: 800px;
+    margin: 0 auto;
+    background: linear-gradient(to top, #fff1eb 0%, #ace0f9 100%);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+  }
+
+  .fc-toolbar {
+    background-color: #2c3e50;
+    color: #ffffff;
+    border-radius: 8px 8px 0 0;
+  }
+
+  .fc-button {
+    background-color: #34495e;
+    border-color: #34495e;
+  }
+
+  .fc-button:hover {
+    background-color: #2c3e50;
+    border-color: #2c3e50;
+  }
+
+  .fc-button.fc-state-active {
+    background-color: #2980b9;
+    border-color: #2980b9;
+  }
+
+  .fc-content {
+    color: #333;
+  }
+
+  .fc-event {
+    background-color: #3498db;
+    border-color: #3498db;
+    color: #ffffff;
+  }
+</style>
+<!-- JS for jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- JS for Moment.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.20.1/moment.min.js"></script>
+<!-- JS for FullCalendar -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.js"></script>
+</head>
+
+<body>
+<h1>Stylized Full Calendar Example</h1>
+
+<div id="calendar"></div>
+
+<script>
+  $(document).ready(function() {
+    $('#calendar').fullCalendar({
+      defaultView: 'month',
+      events: [
+        {
+          title: 'abhiyanth',
+          start: '2024-07-24'
+        },
+        {
+          title: 'Aadhya',
+          start: '2024-07-24' // change with current date
+        },
+        {
+          title: 'Roshni Birthday',
+          start: '2024-02-21'
+        },
+        {
+          title: 'Shinerweb website renewal',
+          start: '2024-02-21'
+        }
+      ]
+    });
+  });
+</script>
+
+</body>
+</html>

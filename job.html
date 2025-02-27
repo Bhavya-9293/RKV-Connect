@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal</title>
+    <link rel="stylesheet" href="job.css">
+</head>
+<body>
+
+    <h1 class="title">Job Listings</h1>
+
+    <div class="job-container">
+        <!-- Job 1 -->
+        <div class="job-card">
+            <h2>Software Engineer</h2>
+            <p><strong>Location:</strong> New York, USA</p>
+            <p><strong>Experience:</strong> 2+ years</p>
+            <p class="job-description">
+                Looking for a Software Engineer with strong knowledge in Python and JavaScript.
+                Experience in web frameworks and cloud services is required.
+            </p>
+            <button class="apply-btn" onclick="openForm('Software Engineer')">Apply Now</button>
+        </div>
+
+        <!-- Job 2 -->
+        <div class="job-card">
+            <h2>Data Analyst</h2>
+            <p><strong>Location:</strong> San Francisco, USA</p>
+            <p><strong>Experience:</strong> 1+ years</p>
+            <p class="job-description">
+                Seeking a Data Analyst skilled in SQL, Python, and Power BI. Ability to analyze 
+                large datasets and create insightful reports is required.
+            </p>
+            <button class="apply-btn" onclick="openForm('Data Analyst')">Apply Now</button>
+        </div>
+
+        <!-- Job 3 -->
+        <div class="job-card">
+            <h2>UI/UX Designer</h2>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Experience:</strong> 3+ years</p>
+            <p class="job-description">
+                Need a creative UI/UX Designer proficient in Figma and Adobe XD.
+                Responsibilities include designing user-friendly web and mobile interfaces.
+            </p>
+            <button class="apply-btn" onclick="openForm('UI/UX Designer')">Apply Now</button>
+        </div>
+
+        <!-- Job 4 -->
+        <div class="job-card">
+            <h2>Cybersecurity Specialist</h2>
+            <p><strong>Location:</strong> London, UK</p>
+            <p><strong>Experience:</strong> 4+ years</p>
+            <p class="job-description">
+                Looking for an experienced Cybersecurity Specialist to secure enterprise networks.
+                Experience in penetration testing and ethical hacking is a plus.
+            </p>
+            <button class="apply-btn" onclick="openForm('Cybersecurity Specialist')">Apply Now</button>
+        </div>
+
+        <!-- Job 5 -->
+        <div class="job-card">
+            <h2>Project Manager</h2>
+            <p><strong>Location:</strong> Berlin, Germany</p>
+            <p><strong>Experience:</strong> 5+ years</p>
+            <p class="job-description">
+                Seeking a Project Manager with expertise in Agile methodologies.
+                The ideal candidate should have excellent communication and leadership skills.
+            </p>
+            <button class="apply-btn" onclick="openForm('Project Manager')">Apply Now</button>
+        </div>
+
+        <!-- Job 6 -->
+        <div class="job-card">
+            <h2>DevOps Engineer</h2>
+            <p><strong>Location:</strong> Remote</p>
+            <p><strong>Experience:</strong> 3+ years</p>
+            <p class="job-description">
+                Hiring a DevOps Engineer with experience in Docker, Kubernetes, and CI/CD pipelines.
+                Knowledge of cloud infrastructure (AWS/GCP) is preferred.
+            </p>
+            <button class="apply-btn" onclick="openForm('DevOps Engineer')">Apply Now</button>
+        </div>
+
+        <!-- Job 7 -->
+        <div class="job-card">
+            <h2>Machine Learning Engineer</h2>
+            <p><strong>Location:</strong> Boston, USA</p>
+            <p><strong>Experience:</strong> 3+ years</p>
+            <p class="job-description">
+                Looking for an ML Engineer with expertise in TensorFlow, PyTorch, and NLP models.
+                Experience in deploying AI models is an added advantage.
+            </p>
+            <button class="apply-btn" onclick="openForm('Machine Learning Engineer')">Apply Now</button>
+        </div>
+
+        <!-- Job 8 -->
+        <div class="job-card">
+            <h2>Cloud Architect</h2>
+            <p><strong>Location:</strong> Sydney, Australia</p>
+            <p><strong>Experience:</strong> 6+ years</p>
+            <p class="job-description">
+                Seeking a Cloud Architect with experience in AWS, Azure, and hybrid cloud solutions.
+                Strong knowledge of cloud security best practices is required.
+            </p>
+            <button class="apply-btn" onclick="openForm('Cloud Architect')">Apply Now</button>
+        </div>
+
+        <!-- Job 9 -->
+        <div class="job-card">
+            <h2>Full Stack Developer</h2>
+            <p><strong>Location:</strong> Toronto, Canada</p>
+            <p><strong>Experience:</strong> 2+ years</p>
+            <p class="job-description">
+                Hiring a Full Stack Developer skilled in React.js and Node.js.
+                Experience in building scalable web applications is a must.
+            </p>
+            <button class="apply-btn" onclick="openForm('Full Stack Developer')">Apply Now</button>
+        </div>
+    </div>
+
+    <!-- Application Form (Hidden by Default) -->
+    <div class="form-popup" id="jobForm">
+        <div class="form-content">
+            <span class="close-btn" onclick="closeForm()">&times;</span>
+            <h2>Apply for <span id="jobTitle"></span></h2>
+            <form id="applicationForm">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" required>
+
+                <label for="resume">Upload Resume</label>
+                <input type="file" id="resume" required>
+
+                <button type="submit">Submit Application</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="job.js"></script>
+</body>
+</html>
